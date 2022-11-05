@@ -1,0 +1,51 @@
+
+
+
+
+
+.search-btn{
+    width: 450px;
+}
+.product-login{
+   
+    background: rgb(248, 247, 246);
+    width: 70px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    margin-top: 4px;
+    padding: 4px 40px;
+    color: blue;
+    height: 30px;
+    text-align: center;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+// .navbar{
+//     &-brand{
+//         margin-left: 20px;
+//        color: white;
+//     }
+// }
+
+
+.modal-dialog
+{
+  max-width: 600px;
+}
+
+.modal-body{
+    padding: 0px;
+   
+}
+
+.modal-dialog{
+    max-width: 700px;
+}
+
+.closeBtn{
+    position: absolute;
+    right: 0px;
+}

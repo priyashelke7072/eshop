@@ -1,0 +1,30 @@
+.homesection{
+    height: 140px;
+  
+    padding: 10px;
+}
+.home-container{
+   
+    position: relative;
+    top: -10px;
+   
+ 
+}
+.product-category{
+    margin-left: 30px;
+    margin-left: 3rem!important;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+.product-img{
+    height: 250px;
+}
+.product-body{
+    max-height: 180px; ;
+}
+
+.offer-price{
+    text-decoration: line-through;
+}
