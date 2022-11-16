@@ -10,12 +10,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     SigninComponent,
-    SignUpComponent
+    SignUpComponent,
+    
   ],
   imports: [
     CommonModule,
     LoginRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
   exports:[
     SigninComponent,

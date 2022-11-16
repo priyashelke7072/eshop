@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +10,7 @@ export class HttpService {
 
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,) { }
 
 
 headers= new HttpHeaders()
@@ -18,9 +18,12 @@ headers= new HttpHeaders()
 
 
 
-getData(endPoint:string){
+getData(endPoint:string,params:HttpParams = new HttpParams()){
+ return this.http.get(this.baseUrl+endPoint,{'params':params,'headers':this.headers})
+  }
 
 
- return this.http.get(this.baseUrl+endPoint,{'headers':this.headers})
+  postData(endPoint:string,requestBody:any){
+    return this.http.post(this.baseUrl+endPoint,requestBody,{'headers':this.headers})
   }
 }

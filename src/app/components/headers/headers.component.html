@@ -13,8 +13,20 @@
       </form>
       <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ms-2 ms-3 ">
+          <li class="nav-item ms-2 ms-3 " *ngIf="!isUserLoggedIn">
             <a class="nav-link active  ml-2 product-login text-primary  " aria-current="page" data-bs-toggle="modal" data-bs-target="#LoginModal">Login</a>
+          </li>
+          <li class="nav-item dropdown ms-3" *ngIf="isUserLoggedIn">
+            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              {{userDetails.userName}}
+            </a>
+            <ul class="dropdown-menu text-white" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" [routerLink]="['My_Profile']">My Profile</a></li>
+              <li><a class="dropdown-item" (click)="Logout()">Logout</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
           </li>
           <li class="nav-item ms-3">
             <a class="nav-link text-white" href="#">Become a seller</a>
@@ -50,13 +62,13 @@
 <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <!-- <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div> -->
+      <div class="modal-header">
+        <button type="button" #btnClosed class="btn-close"   data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
       <div class="modal-body">
- <app-signin *ngIf="actionType == 'signIn'" (actionEmit)="emmitedAction($event)"></app-signin>
- <app-sign-up *ngIf="actionType == 'signup'"></app-sign-up>
+ <app-signin *ngIf="actionType == 'signIn'"   (actionEmit)= "emitActionSign($event)" ></app-signin>
+ <app-sign-up *ngIf="actionType == 'signup'"  (signUpComplete)= "signUpAction($event)" ></app-sign-up>
       </div>
      
       <!-- <div class="modal-footer">
